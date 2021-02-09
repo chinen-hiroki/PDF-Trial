@@ -18,6 +18,7 @@
   "homepage": "https://github.com/chinen-hiroki/PDF-Trial#readme",
   "dependencies": {
     "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "html-pdf": "^2.2.0"
   }
