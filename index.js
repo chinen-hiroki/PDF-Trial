@@ -10,7 +10,7 @@ app.set('port', process.env.PORT || portForDev);
 
 Pdf.create(html, options).toFile('./public/index.pdf', function(err, res) {
   if (err) return console.log(err);
-  console.log(res); // { filename: '/app/businesscard.pdf' }
+  console.log(res);
 });
 
 app.use(express.static('public'));
