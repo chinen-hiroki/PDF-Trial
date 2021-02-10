@@ -13,10 +13,6 @@ Pdf.create(html, options).toFile('./public/index.pdf', function(err, res) {
   console.log(res); // { filename: '/app/businesscard.pdf' }
 });
 
-express.static('public');
-
-app.use((req, res, next) => {
-  res.send('<h1>Completed</h1><p><a href="./public/index.pdf" download="sample.pdf">PDF</a></p>');
-});
+app.use(express.static('public'));
 
 app.listen(app.get('port'));
