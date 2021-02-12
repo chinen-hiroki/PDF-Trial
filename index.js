@@ -17,17 +17,23 @@ Pdf.create(html, options).toFile('./public/index.pdf', function(err, res) {
 app.use(express.static('public'));
 
 // Create PDF and upload it to AWS S3
-var option = {
+var options = {
   url: 'https://www.hypdf.com/htmltopdf',
-  method: 'POST',
   headers: {
-    "content-type": 'application/json',
+    "content-type": "application/json",
   },
-  json: true,
-  parameters: {content: 'HTML', user: 'HYPDF_USER', password: 'HYPDF_PASSWORD'},
-  result: 'BINARY_PDF_DATA'
-}
-request.post(option,
+  json: {
+    user: 'HYPDF_USER',
+    password: 'HYPDF_PASSWORD',
+    content: '<html><body><h1>Title</h1></body></html>',
+    margin_left: '0.5in',
+    grayscale: true,
+    bucket: 'YOUR_BUCKET_NAME',
+    key: 'some_file_name.pdf',
+    public: true
+  }
+};
+request(options,
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body);
