@@ -17,7 +17,7 @@ Pdf.create(html, options).toFile('./public/index.pdf', function(err, res) {
 app.use(express.static('public'));
 
 // Create PDF and upload it to AWS S3
-var options = {
+var options2 = {
   url: 'https://www.hypdf.com/htmltopdf',
   headers: {
     "content-type": "application/json",
@@ -33,7 +33,7 @@ var options = {
     public: true
   }
 };
-request(options,
+request(options2,
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body);
