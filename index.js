@@ -27,7 +27,7 @@ var option = {
   parameters: {content: 'HTML', user: 'HYPDF_USER', password: 'HYPDF_PASSWORD'},
   result: 'BINARY_PDF_DATA'
 }
-request.post(
+request.post(option,
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log('Public URL: ', body.url);
