@@ -30,6 +30,7 @@ var option = {
 request.post(option,
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
+            console.log(body);
             console.log('Public URL: ', body.url);
             console.log('Number of pages: ', response.headers['hypdf-pages']);
         }
