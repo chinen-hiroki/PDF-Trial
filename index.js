@@ -7,7 +7,6 @@ app.set('port', process.env.PORT || portForDev);
 // Create PDF and upload it to AWS S3
 var request = require('request'),
   fs = require("fs");
-const { callbackify } = require('util');
 
 // Create PDF and upload it to AWS S3
 request.post(
@@ -19,8 +18,9 @@ request.post(
           content: '<html><body><h1>Title</h1></body></html>',
           margin_left: '0.5in',
           key: 'some_file_name.pdf',
+          bucket: 'mybucket',
           public: true,
-          callback: "https://pdf-trial.herokuapp.com/"
+          test: true,
       }
   },
   function (error, response, body) {
