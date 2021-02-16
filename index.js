@@ -1,5 +1,13 @@
+const express = require('express');
+const app = express();
+const portForDev = 3000;
+
+app.set('port', process.env.PORT || portForDev);
+
+// Create PDF and upload it to AWS S3
 var request = require('request'),
   fs = require("fs");
+const { callbackify } = require('util');
 
 // Create PDF and upload it to AWS S3
 request.post(
@@ -13,6 +21,7 @@ request.post(
           key: 'some_file_name.pdf',
           bucket: 'mybucket',
           public: true,
+          callback: "https://pdf-trial.herokuapp.com/",
           test: true,
       }
   },
@@ -23,3 +32,5 @@ request.post(
       }
   }
 );
+
+app.listen(app.get('port'));
