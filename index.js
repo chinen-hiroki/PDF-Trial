@@ -16,7 +16,7 @@ request.post(
       json: {
           user: '8248aa12-61f1-4a05-9887-e70c7053f710',
           password: 'RGDrn2AOdW9',
-          content: '<html><body><h1>Title</h1></body></html>',
+          content: 'https://webforms-uat.herokuapp.com/reserve/input?type=inv_sfc',
           margin_left: '0.5in',
           key: 'some_file_name.pdf',
           bucket: 'mybucketeer',
