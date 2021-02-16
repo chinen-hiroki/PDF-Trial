@@ -1,10 +1,3 @@
-const express = require('express');
-const app = express();
-const portForDev = 3000;
-
-app.set('port', process.env.PORT || portForDev);
-
-// Create PDF and upload it to AWS S3
 var request = require('request'),
   fs = require("fs");
 
@@ -30,5 +23,3 @@ request.post(
       }
   }
 );
-
-app.listen(app.get('port'));
