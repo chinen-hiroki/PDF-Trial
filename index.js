@@ -19,7 +19,7 @@ request.post(
           content: '<html><body><h1>Title</h1></body></html>',
           margin_left: '0.5in',
           key: 'some_file_name.pdf',
-          bucket: 'mybucket',
+          bucket: 'mybucketeer',
           public: true,
           callback: "https://pdf-trial.herokuapp.com/",
           test: true,
