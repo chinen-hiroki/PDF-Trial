@@ -18,7 +18,6 @@ request.post(
           margin_left: '0.5in',
           key: 'some_file_name.pdf',
           bucket: 'mybucketeer',
-          callback: 'https://pdf-trial.herokuapp.com/',
           public: true,
           test: true,
       }
