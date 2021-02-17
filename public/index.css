@@ -1,15 +1,20 @@
 body {
     padding: 1cm;
-  }
+}
 
-  h1 {
-      color: red;
-  }
+h1 {
+  color: red;
+}
 
-  .jumbotron {
-    background: #F0F0F0!important;
-  }
+.jumbotron {
+  background: #F0F0F0!important;
+}
 
-  .btn {
-    background: rgb(66,133,243)!important;
-  }
+.btn {
+  background: rgb(66,133,243)!important;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
