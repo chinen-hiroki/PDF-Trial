@@ -1,5 +1,12 @@
+const express = require('express');
+const app = express();
 var request = require('request'),
   fs = require("fs");
+const portForDev = 3000;
+
+app.set('port', process.env.PORT || portForDev);
+app.use(express.static('public'));
+
 // Create PDF and upload it to AWS S3
 request.post(
   'https://www.hypdf.com/htmltopdf',
@@ -23,3 +30,5 @@ request.post(
       }
   }
 );
+
+app.listen(app.get('port'));
