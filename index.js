@@ -10,7 +10,7 @@ request.post(
           password: 'RGDrn2AOdW9',
           content: 'https://www.hypdf.com/info/documentation',
           margin_left: '0.5in',
-          key: 'some_file_name.pdf',
+          key: 'creation.pdf',
           bucket: 'mybucketeer',
           callback: 'https://pdf-trial.herokuapp.com/',
           public: true,
