@@ -14,7 +14,7 @@ request.post(
       json: {
           user: '8248aa12-61f1-4a05-9887-e70c7053f710',
           password: 'RGDrn2AOdW9',
-          content: 'https://www.shinseibank.com',
+          content: 'https://www.shinseibank.com/powerflex/structure/?intcid=mega_pdb_000_04',
           margin_left: '0.5in',
           key: 'some_file_name.pdf',
           bucket: 'mybucketeer',
