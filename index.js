@@ -1,6 +1,5 @@
 var request = require('request'),
   fs = require("fs");
-
 // Create PDF and upload it to AWS S3
 request.post(
   'https://www.hypdf.com/htmltopdf',
@@ -12,9 +11,9 @@ request.post(
           margin_left: '0.5in',
           key: 'some_file_name.pdf',
           bucket: 'mybucketeer',
-          callback: 'https://pdf-trial.herokuapp.com/',
           public: true,
           test: true,
+          callback: 'https://pdf-trial.herokuapp.com/',
       }
   },
   function (error, response, body) {
