@@ -14,7 +14,7 @@ request.post(
       json: {
           user: '8248aa12-61f1-4a05-9887-e70c7053f710',
           password: 'RGDrn2AOdW9',
-          content: 'https://bucketeer-c8a7d0b9-76c0-4feb-9eed-a0cca5e04681.s3.amazonaws.com/public/backup/api/v1/banner/key_gaika_otameshiGaika02_w',
+          content: 'public/image.html',
           margin_left: '0.5in',
           key: 'some_file_name.pdf',
           bucket: 'mybucketeer',
