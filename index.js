@@ -15,12 +15,12 @@ request.post(
           user: process.env.HYPDF_USER,
           password: process.env.HYPDF_PASSWORD,
           content: process.env.HTML_PASS,
-          margin_left: '0.5in',
           key: 'some_file_name.pdf',
           bucket: 'mybucketeer',
           callback: 'https://pdf-trial.herokuapp.com/',
           public: true,
           test: process.env.TEST_MODE,
+          page_size: 'A4',
       }
   },
   function (error, response, body) {
