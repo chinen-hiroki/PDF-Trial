@@ -1,4 +1,8 @@
 body {
+    margin: 0 0;
+    padding: 0 0;
+}
+img {
     width: 210mm;
     height: 297mm;
 }
