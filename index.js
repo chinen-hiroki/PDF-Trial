@@ -12,15 +12,15 @@ request.post(
   'https://www.hypdf.com/htmltopdf',
   {
       json: {
-          user: '8248aa12-61f1-4a05-9887-e70c7053f710',
-          password: 'RGDrn2AOdW9',
-          content: 'https://pdf-trial.herokuapp.com/image.html',
+          user: process.env.HYPDF_USER,
+          password: process.env.HYPDF_PASSWORD,
+          content: process.env.HTML_PASS,
           margin_left: '0.5in',
           key: 'some_file_name.pdf',
           bucket: 'mybucketeer',
           callback: 'https://pdf-trial.herokuapp.com/',
           public: true,
-          test: true,
+          test: process.env.TEST_MODE,
       }
   },
   function (error, response, body) {
