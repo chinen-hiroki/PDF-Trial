@@ -1,38 +1,21 @@
 const express = require('express');
 const app = express();
-var request = require('request'),
-  fs = require("fs");
-const portForDev = 3000;
+const portForDev = 4000;
+const fs = require('fs');
+const Pdf = require('html-pdf');
+const html = fs.readFileSync('./public/index.html', 'utf8');
+const options = { format:'A4'};
 
 app.set('port', process.env.PORT || portForDev);
 app.use(express.static('public'));
 
-// Create PDF and upload it to AWS S3
-request.post(
-  'https://www.hypdf.com/htmltopdf',
-  {
-      json: {
-          user: process.env.HYPDF_USER,
-          password: process.env.HYPDF_PASSWORD,
-          content: process.env.HTML_PASS,
-          key: 'some_file_name.pdf',
-          bucket: 'mybucketeer',
-          callback: 'https://pdf-trial.herokuapp.com/',
-          public: true,
-          test: process.env.TEST_MODE,
-          page_size: 'A4',
-          margin_top: '0in',
-          margin_bottom: '0in',
-          margin_right: '0in',
-          margin_left: '0in',
-      }
-  },
-  function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-          console.log('Public URL: ', body.url);
-          console.log('Number of pages: ', response.headers['hypdf-pages']);
-      }
-  }
-);
+Pdf.create(html, options).toFile('./public/index.pdf', function(err, res) {
+  if (err) return console.log(err);
+  console.log(res); // { filename: '/app/businesscard.pdf' }
+});
 
-app.listen(app.get('port'));
+app.use((req, res, next) => {
+  res.send('<h1>Completed</h1><p><a href="./public/index.pdf" download="sample.pdf">PDF</a></p>');
+});
+
+app.listen(app.get('port')); 
