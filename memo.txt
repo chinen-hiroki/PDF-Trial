@@ -69,3 +69,18 @@ app.listen(app.get('port'));
     <a href="https://mybucketeer.s3-ap-northeast-1.amazonaws.com/some_file_name.pdf" download="sample.pdf">PDF</a>
   </body>
 </html>
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://pdf-trial.herokuapp.com/index.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Inline Frame</h1>
+        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        <p>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+      </div>
+    </div>
+  </body>
+</html>
